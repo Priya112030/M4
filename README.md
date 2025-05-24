@@ -1,64 +1,79 @@
 # EX-16-LEFT-SHIFT-OPERATION
 ## AIM
-To write a C Program to perform the basic left shift operation for 44 integer number with 3 shifts.
+To write a C Program to perform bitwise OR operation of two integers. 
 
 ## ALGORITHM
 1.	Start the program.
-2.	Assign values of a and b as 44 and 3.
-3.	Use left shift operator (<<) and shift the value of a three times.
+2.	Assign values of a and b as 1 and 1.
+3.	Use bitwise OR operator.
 4.	Display the result.
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+int main()
+{
+    int a,b,res;
+    scanf("%d%d",&a,&b);
+    res=a|b;
+    printf("Bitwise-OR result is = %d",res);
+    return 0;
+}
+```
 
 ## OUTPUT
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/68d23fe3-74d9-4c37-ac96-3386f2b1b1c1)
 
 ## RESULT
-Thus the program to perform the basic left shift operation for 44 integer number with 3 shifts has been executed successfully.
-
-
-
-
- 
- 
+Thus the program to perform bitwise OR operation of two integers has been executed successfully.
 
 
 # EX-17-TWO-NUMBERS-ARE-EQUAL-OR-NOT
-
-
 ## AIM
-
-Write a C Program to check whether the two numbers are equal or not using simple if statement.
+Write a C Program to display the remarks for the grade using simple if statement.
 
 ## ALGORITHM
-
 1.	Start the program.
-2.	Read two numbers.
-3.	If first number is equal to second number, display both are equal.
-4.	Otherwise display both are not equal.
+2.	Read remarks for the grade.
+3.	If grade is equal to C, display Fair.
+4.	If grade is equal to D, display Bad.
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
 
+int main()
+{
+    char grade;
+    
+    scanf("%c", &grade);
+    
+
+    if(grade=='C')
+    {
+        printf("Fair");
+    }
+    if(grade=='D')
+    {
+        printf("Bad");
+    }
+    
+
+    return 0;
+}
+```
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/f05b557d-2cde-4691-b3de-72aa7bef5732)
            
 ## RESULT
 
-Thus the program to check whether the two numbers are equal or not using simple if statement has been executed successfully
+Thus the program to display the remarks for the grade using simple if statement has been executed successfully
  
  
-
-
-# EX-18-STRING-LOWERCASE-CONVERSION
+## EX-18-STRING-LOWERCASE-CONVERSION
 ## AIM
 Write a C Program to convert the given string into lowercase.
 
@@ -70,21 +85,33 @@ Write a C Program to convert the given string into lowercase.
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char str[100];
+    scanf("%s", str);
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+    printf("Lower case String is:%s\n", str);
+
+    return 0;
+}
+```
 
 ## OUTPUT
-
-
-
+![image](https://github.com/user-attachments/assets/338550d0-4a9f-4670-8b1e-56a0c43c71f9)
 
 ## RESULT
 Thus the program to convert the given string into lowercase has been executed successfully
  
  
-
-
-# EX-19-COUNT-OF-WORDS-IN-A-STRING
+## EX-19-COUNT-OF-WORDS-IN-A-STRING
 ## AIM
-Write a C Program to count the total number of words in a given string using do While loop.
+Write a C Program to count the total number of words in a given string using While loop.
 
 ## ALGORITHM
 1.	Start the program.
@@ -95,44 +122,86 @@ Write a C Program to count the total number of words in a given string using do 
 6.	Stop the program.
 
 ## PROGRAM
+```
+# include <stdio.h>
+# include <string.h>
+# include <ctype.h>
+int main(){
+    char str[200];
+    int i=0,c=0;
+    int inword=0;
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    while(str[i]!='\0'){
+        if(!isspace(str[i])){
+            if(inword==0){
+                c++;
+                inword=1;
+            }
+        }else{
+            inword=0;
+        }
+        i++;
+    }
+    printf("%d\n",c);
+    return 0;
+}
+```
 
 ## OUTPUT
-
-
-
-
+![image](https://github.com/user-attachments/assets/e8bafbe0-1ad2-4817-9a28-64fc98816e7d)
 
 ## RESULT
-Thus the program to count the total number of words in a given string using do While loop has been executed successfully
+Thus the program to count the total number of words in a given string using  While loop has been executed successfully
  
  
 
-
-# EX  -20 -COMPARING TWO STRINGS
+## EX  -20 -COMPARING TWO STRINGS
 ## AIM
 write a Program to compare two strings without using strcmp().
 ## ALGORITHM
-Step 1: Start the program.
-Step 2: Declare two character arrays c1 and c2 of size 100 to store the strings. Also, declare an integer variable
-             flag and initialize it to 0, and i for indexing.      
-Step 3: Read the first string c1 using scanf("%[^\n]", c1); — this reads input until a newline is encountered 
-            (i.e., can include spaces).
-Step 4: Read the second string c2 using scanf("%s", c2); — this reads input until a space or newline (i.e., no 
-            spaces in the second string).
-Step 5: Start comparing characters of both strings from index i = 0.
-Step 6: Repeat the following while neither c1[i] nor c2[i] is '\0' (i.e., end of string):
-•	If c1[i] is not equal to c2[i], set flag = 1.
-•	Increment i by 1.
-Step 7: After the loop, check the value of flag:
-•	If flag == 0, print "strings are same".
-•	Otherwise, print "strings are not same".
-Step 8: End the program.
+```
+Step 1: Start
+Step 2: Declare two character arrays str1 and str2 to store the input strings
+Step 3: Declare integer variables i (for index) and flag (to indicate mismatch), and initialize i = 0, flag = 0
+Step 4: Read two strings from the user using scanf()
+Step 5: Repeat the following steps while either str1[i] or str2[i] is not equal to the null character ('\0'):
+If str1[i] is not equal to str2[i]:
+Set flag = 1
+Break out of the loop
+Else:
+Increment i to move to the next character
+Step 6: After the loop, check the value of flag:
+If flag == 0, then print "strings are same"
+Else, print "strings are not same"
+Step 7: End
+```
 
 ## PROGRAM
+```
+# include <stdio.h>
 
+int main(){
+    char str1[100],str2[100];
+    int i=0,flag=0;
+    scanf("%s%s",str1,str2);
+    while (str1[i] != '\0' || str2[i] != '\0'){
+        if(str1[i] != str2[i]) {
+            flag=1;
+            break;
+        }
+        i++;
+    } 
+    if (flag==0)
+         printf("strings are same\n");
+    else
+         printf("strings are not same\n");
+         
+    return 0;
+```
 
 ## OUTPUT
- 
+![image](https://github.com/user-attachments/assets/1131f85c-ce6f-453d-a2c5-8ac5f85d8a41)
 
 ## RESULT
 Thus the C Program to compare two strings without using strcmp() has been executed successfully.
