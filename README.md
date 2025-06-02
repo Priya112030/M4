@@ -28,11 +28,13 @@ Write a C Program to check whether the two numbers are equal or not using simple
 
 
 ## ALGORITHM
+
 1.	Start the program.
-2.	Read remarks for the grade.
-3.	If grade is equal to C, display Fair.
-4.	If grade is equal to D, display Bad.
+2.	Read two numbers.
+3.	If first number is equal to second number, display both are equal.
+4.	Otherwise display both are not equal.
 5.	Stop the program.
+
 
 ## PROGRAM
 ```
