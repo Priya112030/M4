@@ -1,6 +1,6 @@
 # EX-16-LEFT-SHIFT-OPERATION
 ## AIM
-To write a C Program to perform bitwise OR operation of two integers. 
+To write a C Program to perform the basic left shift operation for 44 integer number with 3 shifts.
 
 ## ALGORITHM
 1.	Start the program.
@@ -11,27 +11,21 @@ To write a C Program to perform bitwise OR operation of two integers.
 
 ## PROGRAM
 ```
-#include <stdio.h>
-int main()
-{
-    int a,b,res;
-    scanf("%d%d",&a,&b);
-    res=a|b;
-    printf("Bitwise-OR result is = %d",res);
-    return 0;
-}
+
 ```
 
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/68d23fe3-74d9-4c37-ac96-3386f2b1b1c1)
+
 
 ## RESULT
-Thus the program to perform bitwise OR operation of two integers has been executed successfully.
+Thus the program to perform the basic left shift operation for 44 integer number with 3 shifts has been executed successfully.
+
 
 
 # EX-17-TWO-NUMBERS-ARE-EQUAL-OR-NOT
 ## AIM
-Write a C Program to display the remarks for the grade using simple if statement.
+Write a C Program to check whether the two numbers are equal or not using simple if statement.
+
 
 ## ALGORITHM
 1.	Start the program.
@@ -42,36 +36,15 @@ Write a C Program to display the remarks for the grade using simple if statement
 
 ## PROGRAM
 ```
-#include <stdio.h>
 
-int main()
-{
-    char grade;
-    
-    scanf("%c", &grade);
-    
-
-    if(grade=='C')
-    {
-        printf("Fair");
-    }
-    if(grade=='D')
-    {
-        printf("Bad");
-    }
-    
-
-    return 0;
-}
 ```
 
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/f05b557d-2cde-4691-b3de-72aa7bef5732)
+
            
 ## RESULT
+Thus the program to check whether the two numbers are equal or not using simple if statement has been executed successfully.
 
-Thus the program to display the remarks for the grade using simple if statement has been executed successfully
- 
  
 ## EX-18-STRING-LOWERCASE-CONVERSION
 ## AIM
@@ -111,7 +84,7 @@ Thus the program to convert the given string into lowercase has been executed su
  
 ## EX-19-COUNT-OF-WORDS-IN-A-STRING
 ## AIM
-Write a C Program to count the total number of words in a given string using While loop.
+Write a C Program to count the total number of words in a given string using do While loop.
 
 ## ALGORITHM
 1.	Start the program.
@@ -123,28 +96,34 @@ Write a C Program to count the total number of words in a given string using Whi
 
 ## PROGRAM
 ```
-# include <stdio.h>
-# include <string.h>
-# include <ctype.h>
-int main(){
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int main() {
     char str[200];
-    int i=0,c=0;
-    int inword=0;
-    fgets(str,sizeof(str),stdin);
-    str[strcspn(str,"\n")]='\0';
-    while(str[i]!='\0'){
-        if(!isspace(str[i])){
-            if(inword==0){
-                c++;
-                inword=1;
+    int i = 0, c = 0;
+    int inword = 0;
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = '\0'; 
+
+    if (str[0] != '\0') { 
+        do {
+            if (!isspace(str[i])) {
+                if (inword == 0) {
+                    c++;
+                    inword = 1;
+                }
+            } else {
+                inword = 0;
             }
-        }else{
-            inword=0;
-        }
-        i++;
+            i++;
+        } while (str[i] != '\0');
     }
-    printf("%d\n",c);
+
+    printf("%d\n", c);
     return 0;
+}
+
 }
 ```
 
