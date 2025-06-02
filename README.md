@@ -133,7 +133,7 @@ int main() {
 ![image](https://github.com/user-attachments/assets/e8bafbe0-1ad2-4817-9a28-64fc98816e7d)
 
 ## RESULT
-Thus the program to count the total number of words in a given string using  While loop has been executed successfully
+Thus the program to count the total number of words in a given string using do  While loop has been executed successfully
  
  
 
