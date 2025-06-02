@@ -11,11 +11,16 @@ To write a C Program to perform the basic left shift operation for 44 integer nu
 
 ## PROGRAM
 ```
-
+#include<stdio.h>
+int main(){
+    int a=44;
+    a=a<<3;
+    printf("After Left Shift Operation value of a is:%d",a);
+}
 ```
 
 ## OUTPUT
-
+![WhatsApp Image 2025-04-27 at 15 24 04_37c40b2d](https://github.com/user-attachments/assets/f0698316-3bd1-4b5e-b7c0-06769988aea0)
 
 ## RESULT
 Thus the program to perform the basic left shift operation for 44 integer number with 3 shifts has been executed successfully.
@@ -38,11 +43,25 @@ Write a C Program to check whether the two numbers are equal or not using simple
 
 ## PROGRAM
 ```
-
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    scanf("%d%d",&a,&b);
+    if(a==b)
+    {
+        printf("X is equal to Y");
+    }
+    else
+    {
+        printf("X is NOT equal to Y");
+    }
+    return 0;
+}
 ```
 
 ## OUTPUT
-
+![Screenshot 2025-04-27 151357](https://github.com/user-attachments/assets/6d8f7a05-b84b-4964-bb3d-80d09438cb86)
            
 ## RESULT
 Thus the program to check whether the two numbers are equal or not using simple if statement has been executed successfully.
@@ -100,37 +119,27 @@ Write a C Program to count the total number of words in a given string using do 
 ```
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
-int main() {
-    char str[200];
-    int i = 0, c = 0;
-    int inword = 0;
-    fgets(str, sizeof(str), stdin);
-    str[strcspn(str, "\n")] = '\0'; 
 
-    if (str[0] != '\0') { 
+int main() {
+    char a[100];
+    int l = 0;
+    fgets(a, sizeof(a), stdin);
+    a[strcspn(a, "\n")] = '\0';
+
+    
+    if (a[0] != '\0') {
         do {
-            if (!isspace(str[i])) {
-                if (inword == 0) {
-                    c++;
-                    inword = 1;
-                }
-            } else {
-                inword = 0;
-            }
-            i++;
-        } while (str[i] != '\0');
+            l++;
+        } while (a[l] != '\0');
     }
 
-    printf("%d\n", c);
+    printf("%d\n", l);
     return 0;
 }
 
-}
-```
 
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/e8bafbe0-1ad2-4817-9a28-64fc98816e7d)
+![Screenshot 2025-04-27 151533](https://github.com/user-attachments/assets/9a3e9933-6eb7-493c-ad3f-22ca658d6ad0)
 
 ## RESULT
 Thus the program to count the total number of words in a given string using do  While loop has been executed successfully
